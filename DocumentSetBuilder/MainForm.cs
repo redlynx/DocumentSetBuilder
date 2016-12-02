@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -194,7 +195,7 @@ namespace DocumentSetBuilder
 
                 // load seed and percentage split from user settings
                 Int32.TryParse(txtSeed.Text, out seed);
-                Double.TryParse(txtPercentageSplit.Text, out percentageSplit);
+                Double.TryParse(txtPercentageSplit.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out percentageSplit);
                 
                 Properties.Settings.Default.Source = root;
                 Properties.Settings.Default.Destination = dest;
